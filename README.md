@@ -1,3 +1,39 @@
+# About this project
+Become a Senior React Developer! Build a massive E-commerce app with Redux, Hooks, GraphQL, ContextAPI, Stripe
+
+A complete e-commerce React application with zero server code thanks to Firebase that provide data store and user authentication
+
+
+
+Become a Senior React Developer! 
+Build a massive E-commerce app with Redux, Hooks, GraphQL, ContextAPI, Stripe, Firebase, 
+
+Don't forget to create your own Firebase database and add your key's into index.html page.
+
+
+An important thing to note about any GitHub links that you fork and clone from this point forward is that you must replace the config  in firebase.utils.js  with your own config object in the firebase project overview that we learned in the last lesson. The config object is how firebase knows that your application is connected to your firebase account and database!
+
+
+
+Optional: How to fix 403: restricted_client error
+It's possible you may encounter a google Authorization error that says 403:restricted_client. If you do, here are the instructions to fix it!
+
+There should be a Learn More link in the popup, clicking that should take you to the Google APIs console that has three tabs under the header named Credentials, OAuth Consent Screen, and Domain Verification. Go to the OAuth Consent Screen tab and update the Application Name to "crwn-clothing" or any other name you're comfortable with (i.e. the name of your project). Click on save at the bottom, then try logging into your verified Google account thereafter.
+
+
+
+
+
+
+---
+
+Assuming you have node.js installed on your machine, to run this project you should run the following commands 
+### `npm install`
+### `npm start`
+
+
+<!-- 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -67,4 +103,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
