@@ -11,16 +11,31 @@ const firebaseConfig = {
     projectId: "e-commerce-db-fc93c",
     storageBucket: "e-commerce-db-fc93c.appspot.com",
     messagingSenderId: "881548968779",
-    appId: "1:881548968779:web:679cfed6416a912524dece",
-    measurementId: "G-Q2CPSV1LRN"
+    appId: "1:881548968779:web:baae2014022a17e324dece",
+    measurementId: "G-KN7P4RL7DZ"
 };
 
-firebase.initializeApp(firebaseConfig);
+try {
+    firebase.initializeApp(firebaseConfig);
+} catch (err) {
+    console.log('there is a problem with firebase.initializeApp')
+}
+
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    if (!userAuth) {
+        return;
+    }
+    
+    const userRef = await firestore.doc('users/kjsdhfkjdshfskdhas');
+    const userSnapShot = await userRef.get();
+    
+    console.log(userSnapShot);
+}
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GithubAuthProvider();
+const provider = new firebase.auth.GoogleAuthProvider();
 
 
 // 'select_account' - always trigger a google popup whenever we use this google auth provider
