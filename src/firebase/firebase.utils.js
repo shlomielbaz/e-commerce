@@ -22,25 +22,34 @@ try {
 }
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-    if (!userAuth) {
-        return;
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+  const snapShot = await userRef.get();
+
+  if (!snapShot.exists) {
+    const { email } = userAuth;
+    const createdAt = new Date();
+    try {
+      await userRef.set({
+        email,
+        createdAt,
+        ...additionalData
+      });
+    } catch (error) {
+      console.log('error creating user', error.message);
     }
-    
-    const userRef = await firestore.doc('users/kjsdhfkjdshfskdhas');
-    const userSnapShot = await userRef.get();
-    
-    console.log(userSnapShot);
-}
+  }
+
+  return userRef;
+};
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
-
-
-// 'select_account' - always trigger a google popup whenever we use this google auth provider
 provider.setCustomParameters({ prompt: 'select_account' });
-
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
