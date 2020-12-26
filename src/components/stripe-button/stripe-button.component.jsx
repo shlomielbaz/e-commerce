@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {PaymentRequestButtonElement, useStripe} from '@stripe/react-stripe-js';
+import React from 'react';
+// import {PaymentRequestButtonElement, useStripe} from '@stripe/react-stripe-js';
 import StripeCheckout from "react-stripe-checkout";
 
 import "./stripe-button.styles.scss";
